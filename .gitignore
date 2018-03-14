@@ -4,6 +4,7 @@
 node_modules/**
 node_modules/
 dist/
+.cache/
 !bower_components/**
 *.orig
 /npm-debug.log

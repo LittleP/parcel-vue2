@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section class="list" v-for="item in items">
+        <section class="list" v-for="item in items" @click="goDetail(item)">
             <img src="../../images/1.jpg" class="img-block" />
             <div class="img-right-side">
                 <h1 class="font-17px ellipsis gray-2 line-height-1">快来看这个宇宙无敌的超级直播!</h1>
@@ -20,28 +20,25 @@
 </template>
 
 <script>
+    var self = this;
+    console.log(self);
     export default {
         mounted() {
-
+            console.log(this);
         },
         data() {
             return {
                 parentMessage: 'Parent',
                 items: [
-                    {},
-                    {},
-                    {},
-                    {},
-                    {},
-                    {},
-                    {},
-                    {},
-                    {},
-                    {},
-                    {},
-                    {},
-                    {}
+                    {id:1},
+                    {id:2},
+                    {id:3}
                 ]
+            }
+        },
+        methods: {
+            goDetail: (item)=>{
+                this.$router.push('#/detail/' + item.id);
             }
         }
     }
