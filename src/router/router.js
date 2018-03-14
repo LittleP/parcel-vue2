@@ -5,9 +5,14 @@ const list = () => import('../components/pages/list.vue');
 Vue.use(Router);
 export default new Router({
     routes: [
+        { path: '/', redirect: '/list' },
         {
-            path: '/',
+            path: '/list',
             component: list
+        },
+        {
+            path: '/detail/:id',
+            component: detail
         }
     ]
 })
