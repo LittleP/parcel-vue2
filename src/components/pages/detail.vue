@@ -1,88 +1,75 @@
 <template>
     <div>
-        <section class="list">
-            <img src="../../images/1.jpg" class="img-block" />
-            <div class="img-right-side">
-                <h1 class="font-17px ellipsis gray-2 line-height-1">快来看这个宇宙无敌的超级直播!</h1>
-                <p class="p-t-10px tips">
-                    <img class="m-r-5px" src="../../images/2.jpg" />
-                    <span class="m-r-10px font-14px gray-9">大佬</span>
-                    <i class="point"></i>
-                    <span class="m-l-10px font-14px gray-9">超级金牌讲师</span>
-                </p>
-                <p class="m-t-20px line-height-1">
-                    <span class="font-14px gray-9">1240人参与</span>
-                    <span class="pull-right font-14px orange">预计45分钟</span>
-                </p>
-            </div>
-        </section>
+        <header class="header">
+            <img src="../../images/1.jpg" />
+            <span class="font-14px gray-9 m-l-5px p-r-5px">大哥大</span>
+            <span class="font-14px gray-9">2天</span>
+        </header>
+        <main>
+            <h1 class="font-18px gray-2">快来看这个宇宙无敌的超级直播!</h1>
+            <p class="font-14px gray-2 tips">ES6 箭头函数this指向 箭头函数有几个使用注意点。
+                (1)函数体内的this对象,就是定义时所在的对象,而不是使用时所在的对象</p>
+            <p class="bg-cover photo m-t-15px" v-bind:style="bgStyle"></p>
+        </main>
     </div>
 </template>
 
 <script>
+    import Img from '../../images/1.jpg';
+    import Img2 from '../../images/2.jpg';
     export default {
-        mounted() {
-
+        computed: {
+            bgStyle: function () {
+                return {
+                    'background-image': 'url("' + this.photo + '")'
+                }
+            }
         },
         data() {
             return {
-                parentMessage: 'Parent',
+                photo: Img
             }
+        },
+        mounted() {
+            var self = this;
+            setTimeout(function () {
+                self.photo = Img2;
+            }, 3000);
         }
     }
 </script>
 
 <style lang="less" scoped rel="stylesheet/less">
-    @import "../../css/utilities/tools.less";
-    @import "../../css/utilities/font-px.less";
-    @import "../../css/utilities/padding.less";
-    @import "../../css/utilities/margin.less";
-    @import "../../css/config/mixins/border.less";
-    @import "../../css/fonts/iconfont.less";
-    .list:first-child {
-        &:before {
-          display: none;
+    @import "../../css/page-normal";
+    .header {
+        padding: 10px;
+        position: relative;
+        &:after {
+            .Pseudo-border-after();
+        }
+        img,span {
+            vertical-align: middle;
+            display: inline-block;
+        }
+        img {
+            height: 20px;
+            width: 20px;
+            border-radius: 100px;
         }
     }
-    .list{
-        margin-left: 15px;
-        padding: 15px 15px 15px 0;
-        position: relative;
-        &:before {
-            .Pseudo-border-before();
-        }
-
-        .img-block {
-            width: 115px;
-            height: 80px;
-            margin-right: 15px;
-            display: inline-block;
-            vertical-align: top;
-        }
-        .img-right-side {
-            display: inline-block;
-            vertical-align: top;
-            width: calc(100% - 145px);
+    main {
+        padding: 0 15px;
+        line-height: 1;
+        h1 {
+            padding: 15px 0;
         }
         .tips{
-            span,img,i {
-                display: inline-block;
-                vertical-align: middle;
-                line-height: 1;
-            }
-            img {
-                width: 20px;
-                height: 20px;
-                border-radius: 100px;
-            }
-            .point {
-                width:3px;
-                height:3px;
-                background:rgba(221,221,221,1);
-                border-radius: 100px;
-            }
+            line-height: 1.2;
         }
-
+        .photo {
+            height: 120px;
+            width: 100%;
+        }
     }
 
 </style>
