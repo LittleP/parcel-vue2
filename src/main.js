@@ -4,6 +4,8 @@ import router from './router/router.js';
 import './css/common.less';
 
 Vue.config.productionTip = false;
+Vue.config.debug = true;
+
 new Vue({
     router,
     render (h) {

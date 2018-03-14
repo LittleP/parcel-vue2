@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section class="list" v-for="item in items">
+        <section class="list">
             <img src="../../images/1.jpg" class="img-block" />
             <div class="img-right-side">
                 <h1 class="font-17px ellipsis gray-2 line-height-1">快来看这个宇宙无敌的超级直播!</h1>
@@ -27,21 +27,6 @@
         data() {
             return {
                 parentMessage: 'Parent',
-                items: [
-                    {},
-                    {},
-                    {},
-                    {},
-                    {},
-                    {},
-                    {},
-                    {},
-                    {},
-                    {},
-                    {},
-                    {},
-                    {}
-                ]
             }
         }
     }
@@ -53,6 +38,7 @@
     @import "../../css/utilities/padding.less";
     @import "../../css/utilities/margin.less";
     @import "../../css/config/mixins/border.less";
+    @import "../../css/fonts/iconfont.less";
     .list:first-child {
         &:before {
           display: none;

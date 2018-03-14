@@ -20,11 +20,8 @@
 </template>
 
 <script>
-    var self = this;
-    console.log(self);
     export default {
         mounted() {
-            console.log(this);
         },
         data() {
             return {
@@ -37,19 +34,16 @@
             }
         },
         methods: {
-            goDetail: (item)=>{
-                this.$router.push('#/detail/' + item.id);
+            goDetail: function(item) {
+                console.log(this.$router);
+                this.$router.push('/detail/' + item.id);
             }
         }
     }
 </script>
 
 <style lang="less" scoped rel="stylesheet/less">
-    @import "../../css/utilities/tools.less";
-    @import "../../css/utilities/font-px.less";
-    @import "../../css/utilities/padding.less";
-    @import "../../css/utilities/margin.less";
-    @import "../../css/config/mixins/border.less";
+    @import "../../css/page-normal";
     .list:first-child {
         &:before {
           display: none;
