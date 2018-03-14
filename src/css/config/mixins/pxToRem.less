@@ -1,0 +1,24 @@
+/*
+  为了大家开发方便，这里写了几个方法供大家调用转换成rem,仅代表单位是px的，如果是百分比自行设置即可
+*/
+
+.width(@width) {             //@width参数代表传进去的数值
+  width:unit((@width/@browser-default-standard),rem);
+}
+
+.height(@height) {          //@height参数代表传进去的数值
+  height:unit((@height/@browser-default-standard),rem);
+}
+
+//@margin-top,@margin-right,@margin-bottom,@margin-left参数代表传进去的上，右，下，左外间距
+.margin(@margin-top,@margin-right,@margin-bottom,@margin-left){
+  margin:unit((@margin-top/@browser-default-standard),rem),unit((@margin-right/@browser-default-standard),rem),
+  unit((@margin-bottom/@browser-default-standard),rem),unit((@margin-left/@browser-default-standard),rem);
+}
+
+
+//@padding-top,@padding-right,@padding-bottom,@padding-left参数代表传进去的上，右，下，左内间距
+.padding(@padding-top,@padding-right,@padding-bottom,@padding-left){
+  padding:unit((@padding-top/@browser-default-standard),rem),unit((@padding-right/@browser-default-standard),rem),
+  unit((@padding-bottom/@browser-default-standard),rem),unit((@padding-left/@browser-default-standard),rem);
+}

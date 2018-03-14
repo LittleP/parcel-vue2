@@ -1,0 +1,86 @@
+@import "../_variables.less";
+@import "../vendor-prefixes.less";
+
+.border-top(@border-width: 1px, @border-type: solid, @border-color: #d5d5d5) {
+  border-top: @border-width @border-type @border-color;
+}
+.border-bottom(@border-width: 1px, @border-type: solid, @border-color: #d5d5d5) {
+  border-bottom: @border-width @border-type @border-color;
+}
+.border-right(@border-width: 1px, @border-type: solid, @border-color: #d5d5d5) {
+  border-right: @border-width @border-type @border-color;
+}
+.border-left(@border-width: 1px, @border-type: solid, @border-color: #d5d5d5) {
+  border-left: @border-width @border-type @border-color;
+}
+
+.border(@border-width: 1px, @border-type: solid, @border-color: #d5d5d5) {
+  border: @border-width @border-type @border-color;
+}
+
+
+// 为标签做border线 第一种方式（常用）
+.Pseudo-border-after(@color: @hr-border-color) {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: @color;
+  .scaleY(.5);
+  .transform-origin(0 0);
+}
+.Pseudo-border-before(@color: @hr-border-color) {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background: @color;
+  .scaleY(.5);
+  .transform-origin(0 0);
+}
+
+.Pseudo-border-left(@color: @hr-border-color) {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 1px;
+  background: @color;
+  .scaleX(.5);
+  .transform-origin(0 0);
+}
+
+.Pseudo-border-right(@color: @hr-border-color) {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 1px;
+  background: @color;
+  .scaleX(.5);
+  .transform-origin(0 0);
+}
+
+// 一般用于按钮border，但也能用于边框线
+.Pseudo-btnBorder-after(@border-width:1px 1px 1px 1px,@border-color: @hr-border-color,@border-style: solid,@radius:0px){
+  content: "";
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-width: @border-width;
+  border-color: @border-color;
+  border-style: @border-style;
+  z-index: 0;
+  .scale(.5);
+  .transform-origin(0 0);
+  .pointer-events(none);
+  border-radius: @radius;
+}

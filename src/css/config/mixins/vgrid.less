@@ -1,0 +1,90 @@
+@import '../_variables.less';
+@import 'clearfix.less';
+
+.make-row(@gutter: @grid-gutter-width) {
+  margin-left:  unit((@gutter / -2) / 16, em);
+  margin-right: unit((@gutter / -2) / 16, em);
+}
+
+
+
+.make-vgrid-columns() {
+
+  .col(@index) {
+    @item: ~".vcol-xs-@{index}, .vcol-sm-@{index}, .vcol-md-@{index}, .vcol-lg-@{index}";
+    .col((@index + 1), @item);
+  }
+  .col(@index, @list) when (@index =< @grid-columns) {
+    @item: ~".vcol-xs-@{index}, .vcol-sm-@{index}, .vcol-md-@{index}, .vcol-lg-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index > @grid-columns) {
+    @{list} {
+      position: relative;
+      min-height: 1px;
+    }
+  }
+  .col(1);
+}
+
+.float-vgrid-columns(@class) {
+  .col(@index) {
+    @item: ~".vcol-@{class}-@{index}";
+    .col((@index + 1), @item);
+  }
+  .col(@index, @list) when (@index =< @grid-columns) {
+    @item: ~".vcol-@{class}-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index > @grid-columns) {
+    @{list} {
+      float: left;
+    }
+  }
+  .col(1);
+}
+
+
+.calc-vgrid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
+  .vcol-@{class}-@{index} {
+    width: percentage((@index / @grid-columns));
+  }
+}
+
+
+// Basic looping in LESS
+.loop-vgrid-columns(@index, @class, @type) when (@index >= 0) {
+  .calc-vgrid-column(@index, @class, @type);
+  .loop-vgrid-columns((@index - 1), @class, @type);
+}
+
+
+
+.make-grid(@class) {
+  .float-vgrid-columns(@class);
+  .loop-vgrid-columns(@grid-columns, @class, width);
+}
+
+
+
+.loop-tablecell-columns(@n, @index:1) when (@index <= @n) {
+  .g-table-cell@{index}{
+    display: table-cell;
+    vertical-align: middle;
+    width: percentage((@index / @n));
+
+    &.vertical-top {
+      vertical-align: top;
+    }
+    &.vertical-bottom {
+      vertical-align: bottom;
+    }
+  }
+  .loop-tablecell-columns(@n, (@index + 1));
+}
+
+.make-grid-table() {
+  .loop-tablecell-columns(10);
+}
+
+

@@ -1,0 +1,18 @@
+@import './config/_variables';
+@import './config/vendor-prefixes';
+@import "./utilities/font-px";
+@import "./reset/reset";
+body {
+    position: relative;
+    font: @font-size-base @font-family-sans-serif;
+    background-color: @body-background;
+    .tap-highlight-color(rgba(0, 0, 0, 0));
+    .overflow-scrolling(touch);
+    overflow-x: hidden;
+    height: 100%;
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-family: sans-serif;
+}

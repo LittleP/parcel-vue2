@@ -1,0 +1,168 @@
+/*@gray-base:                 #000;
+@gray-dark:                 lighten(@gray-base, 20%);   // #333
+@gray:                      lighten(@gray-base, 46.7%); // #777
+@gray-light:                lighten(@gray-base, 80%); // #ccc
+@gray-lighter:              lighten(@gray-base, 100%); // #fff*/
+/*list*/
+/*button*/
+/* Tab */
+/* Remove highlight on tap event*/
+._font-8px_1ua2s_10 {
+  font-size: 8px;
+}
+._font-10px_1ua2s_13 {
+  font-size: 10px;
+}
+._font-11px_1ua2s_16 {
+  font-size: 11px;
+}
+._font-12px_1ua2s_19 {
+  font-size: 12px;
+}
+._font-13px_1ua2s_22 {
+  font-size: 13px;
+}
+._font-14px_1ua2s_25 {
+  font-size: 14px;
+}
+._font-15px_1ua2s_28 {
+  font-size: 15px;
+}
+._font-16px_1ua2s_31 {
+  font-size: 16px;
+}
+._font-17px_1ua2s_34 {
+  font-size: 17px;
+}
+._font-18px_1ua2s_37 {
+  font-size: 18px;
+}
+._font-20px_1ua2s_40 {
+  font-size: 20px;
+}
+._font-22px_1ua2s_43 {
+  font-size: 22px;
+}
+._font-24px_1ua2s_46 {
+  font-size: 24px;
+}
+* {
+  box-sizing: border-box;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset,
+img,
+button,
+input,
+textarea {
+  border: 0;
+  outline: none;
+}
+ol,
+ul {
+  list-style: none;
+}
+caption,
+th {
+  text-align: left;
+}
+a {
+  text-decoration: none;
+}
+pre {
+  white-space: pre-wrap;
+}
+._bodyUnScroll_1ua2s_107 {
+  overflow: hidden;
+}
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  cursor: pointer;
+}
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="number"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+}
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="text"] {
+  cursor: pointer;
+  background-color: transparent;
+}
+input:-webkit-autofill {
+  color: transparent!important;
+  background-color: transparent!important;
+}
+textarea {
+  resize: none;
+}
+body {
+  position: relative;
+  font: 16px 'PingFangSC-Light', 'PingFang-Light', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'Droidsansfallback', 'Droid Sans', STHeiti, '\534E\6587\7EC6\9ED1', 'Helvetica Neue', SimHei, Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* Remove highlight on tap event*/
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  -ms-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  overflow-x: hidden;
+  height: 100%;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  font-family: sans-serif;
+}

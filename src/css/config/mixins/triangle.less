@@ -1,0 +1,35 @@
+//Triangle
+
+.triangle(@direction:down,@size:10,@color:#000){
+  display:inline-block;
+  width:0;
+  height:0;
+  font-size:0;
+  line-height:0;
+  overflow:hidden;
+}
+
+
+.triangle(@direction:down,@size:10,@color:#000) when(@direction = down) {
+  border-color:@color transparent transparent transparent;
+  border-width:@size @size 0 @size;
+  border-style:solid dashed dashed dashed;
+}
+
+.triangle(@direction:down,@size:10,@color:#000) when(@direction = left) {
+  border-color:transparent @color transparent transparent;
+  border-width:@size @size @size 0;
+  border-style:dashed solid dashed dashed;
+}
+
+.triangle(@direction:down,@size:10,@color:#000) when(@direction = up) {
+  border-color:transparent transparent @color transparent;
+  border-width:0  @size  @size  @size;
+  border-style:dashed dashed solid dashed;
+}
+
+.triangle(@direction:down,@size:10,@color:#000) when(@direction = right) {
+  border-color:transparent transparent transparent @color;
+  border-width:@size  0  @size  @size;
+  border-style:dashed dashed dashed solid;
+}

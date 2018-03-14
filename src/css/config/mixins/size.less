@@ -1,0 +1,10 @@
+@import "../_variables.less";
+// Sizing shortcuts
+.size(@width; @height) {
+  width: unit((@width/@browser-default-standard),rem);
+  height:unit((@height/@browser-default-standard),rem);
+}
+
+.square(@size) {
+  .size(@size; @size);
+}
