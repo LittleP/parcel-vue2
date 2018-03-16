@@ -18,6 +18,10 @@
     import Img from '../../images/1.jpg';
     import Img2 from '../../images/2.jpg';
     export default {
+        created() {
+            this.$store.commit('show');
+            console.log('detail');
+        },
         computed: {
             bgStyle: function () {
                 return {
@@ -31,10 +35,11 @@
             }
         },
         mounted() {
-            var self = this;
-            setTimeout(function () {
-                self.photo = Img2;
-            }, 3000);
+            this.$store.commit('show');
+            setTimeout(()=>{
+                this.photo = Img2;
+                this.$store.commit('hide');
+            }, 1000);
         }
     }
 </script>

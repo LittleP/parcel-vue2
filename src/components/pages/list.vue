@@ -1,5 +1,6 @@
 <template>
     <div>
+        <list-loader v-bind:list="items"></list-loader>
         <section class="list" v-for="item in items" @click="goDetail(item)">
             <img src="../../images/1.jpg" class="img-block" />
             <div class="img-right-side">
@@ -20,22 +21,33 @@
 </template>
 
 <script>
+    import listLoader from './list-loader.vue';
     export default {
+        name: 'list',
+        components: {
+            listLoader: listLoader,
+            props: ['list'],
+        },
+        created() {
+            this.items = [
+                {id:1}, {id:2}, {id:3}
+            ];
+            console.log('list');
+        },
         mounted() {
+//            console.log(123,this.$store.mutations.loading);
+//            this.$store.mutations.loading.commit('show');
+
+//            setTimeout(()=>{this.$store.commit('hide');}, 2000);
+
         },
         data() {
             return {
                 parentMessage: 'Parent',
-                items: [
-                    {id:1},
-                    {id:2},
-                    {id:3}
-                ]
             }
         },
         methods: {
             goDetail: function(item) {
-                console.log(this.$router);
                 this.$router.push('/detail/' + item.id);
             }
         }
@@ -43,51 +55,5 @@
 </script>
 
 <style lang="less" scoped rel="stylesheet/less">
-    @import "../../css/page-normal";
-    .list:first-child {
-        &:before {
-          display: none;
-        }
-    }
-    .list{
-        margin-left: 15px;
-        padding: 15px 15px 15px 0;
-        position: relative;
-        &:before {
-            .Pseudo-border-before();
-        }
-
-        .img-block {
-            width: 115px;
-            height: 80px;
-            margin-right: 15px;
-            display: inline-block;
-            vertical-align: top;
-        }
-        .img-right-side {
-            display: inline-block;
-            vertical-align: top;
-            width: calc(100% - 145px);
-        }
-        .tips{
-            span,img,i {
-                display: inline-block;
-                vertical-align: middle;
-                line-height: 1;
-            }
-            img {
-                width: 20px;
-                height: 20px;
-                border-radius: 100px;
-            }
-            .point {
-                width:3px;
-                height:3px;
-                background:rgba(221,221,221,1);
-                border-radius: 100px;
-            }
-        }
-
-    }
 
 </style>
