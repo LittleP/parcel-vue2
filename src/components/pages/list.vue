@@ -26,7 +26,6 @@
         name: 'list',
         components: {
             listLoader: listLoader,
-            props: ['list'],
         },
         created() {
             this.items = [

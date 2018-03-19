@@ -21,6 +21,7 @@
 
 <script>
     export default {
+        props: ['list'],
         created() {
             console.log('list');
         },
