@@ -36,7 +36,7 @@
 		top: 0;
 		bottom: 0;
 		background: rgba(255, 255, 255, 0);
-		z-index: 900;
+		z-index: 1000;
 	}
 	.spinner-center {
 		position: fixed;
