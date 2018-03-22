@@ -1,15 +1,14 @@
 <template>
     <div>
+
         <transition name="page" mode="out-in">
-            <keep-alive>
-                <router-view v-if="$route.meta.keepAlive"></router-view>
+            <keep-alive include="list">
+                <router-view  v-if="$route.meta.keepAlive"></router-view>
             </keep-alive>
         </transition>
-        <transition name="page" mode="out-in">
-                <router-view v-if="!$route.meta.keepAlive" ></router-view>
+        <transition name="detail" mode="out-in">
+            <router-view v-if="!$route.meta.keepAlive"></router-view>
         </transition>
-
-
         <loading v-show="loadShow"></loading>
     </div>
 </template>
@@ -55,5 +54,21 @@
     .page-enter-to {
         transition: opacity .3s linear;
         opacity: .5;
+    }
+
+    .detail-leave-active{
+        opacity: 0;
+    }
+    .detail-leave-to {
+        opacity: 0;
+    }
+
+    .detail-enter-active{
+        transition: opacity .3s linear;
+        opacity: 0;
+    }
+    .detail-enter-to {
+        transition: opacity .3s linear;
+        opacity: 0;
     }
 </style>

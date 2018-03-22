@@ -1,6 +1,7 @@
 <template>
     <div>
-        <list-loader v-bind:list="items"></list-loader>
+        <h1 class="font-14px">{{num}}</h1>
+        <!--<list-loader v-bind:list="items"></list-loader>-->
         <section class="list" v-for="item in items" @click="goDetail(item)">
             <img src="../../images/1.jpg" class="img-block" />
             <div class="img-right-side">
@@ -28,12 +29,20 @@
             listLoader: listLoader,
         },
         created() {
+            this.num = 1;
             this.items = [
                 {id:1}, {id:2}, {id:3}
             ];
             console.log('list');
         },
+        computed: {
+            data: function() {
+                return this.num;
+            }
+        },
         mounted() {
+            this.num ++;
+//            console.log('data', ++this.num);
 //            console.log(123,this.$store.mutations.loading);
 //            this.$store.mutations.loading.commit('show');
 
@@ -42,11 +51,15 @@
         },
         data() {
             return {
+                num: 1,
                 parentMessage: 'Parent',
+                items: []
             }
         },
         methods: {
             goDetail: function(item) {
+                this.num ++;
+                this.items.push({id:4});
                 this.$router.push('/detail/' + item.id);
             }
         }
