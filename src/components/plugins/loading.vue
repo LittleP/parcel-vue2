@@ -95,42 +95,62 @@
 		-webkit-animation: fade 1s linear infinite;
 	}
 	.spinner-cc div.bar1 {
+		transform: rotate(0deg);
+		animation-delay: 0s;
 		-webkit-transform: rotate(0deg);
 		-webkit-animation-delay: 0s;
 	}
 	.spinner-cc div.bar2 {
+		transform: rotate(30deg);
+		animation-delay: -0.9167s;
 		-webkit-transform: rotate(30deg);
 		-webkit-animation-delay: -0.9167s;
 	}
 	.spinner-cc div.bar3 {
+		transform: rotate(60deg);
+		animation-delay: -0.833s;
 		-webkit-transform: rotate(60deg);
 		-webkit-animation-delay: -0.833s;
 	}
 	.spinner-cc div.bar4 {
+		transform: rotate(90deg);
+		animation-delay: -0.75s;
 		-webkit-transform: rotate(90deg);
 		-webkit-animation-delay: -0.75s;
 	}
 	.spinner-cc div.bar5 {
+		transform: rotate(120deg);
+		animation-delay: -0.667s;
 		-webkit-transform: rotate(120deg);
 		-webkit-animation-delay: -0.667s;
 	}
 	.spinner-cc div.bar6 {
+		transform: rotate(150deg);
+		animation-delay: -0.5833s;
 		-webkit-transform: rotate(150deg);
 		-webkit-animation-delay: -0.5833s;
 	}
 	.spinner-cc div.bar7 {
+		transform: rotate(180deg);
+		animation-delay: -0.5s;
 		-webkit-transform: rotate(180deg);
 		-webkit-animation-delay: -0.5s;
 	}
 	.spinner-cc div.bar8 {
+		transform: rotate(210deg);
+		animation-delay: -0.41667s;
 		-webkit-transform: rotate(210deg);
 		-webkit-animation-delay: -0.41667s;
 	}
 	.spinner-cc div.bar9 {
+		transform: rotate(240deg);
+		animation-delay: -0.333s;
 		-webkit-transform: rotate(240deg);
 		-webkit-animation-delay: -0.333s;
 	}
 	.spinner-cc div.bar10 {
+		transform: rotate(270deg);
+		animation-delay: -0.25s;
 		-webkit-transform: rotate(270deg);
 		-webkit-animation-delay: -0.25s;
 	}
@@ -139,8 +159,18 @@
 		-webkit-animation-delay: -0.1667s;
 	}
 	.spinner-cc div.bar12 {
+		transform: rotate(330deg);
+		animation-delay: -0.0833s;
 		-webkit-transform: rotate(330deg);
 		-webkit-animation-delay: -0.0833s;
+	}
+	@keyframes fade {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+		}
 	}
 	@-webkit-keyframes fade {
 		from {
