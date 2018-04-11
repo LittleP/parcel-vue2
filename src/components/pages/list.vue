@@ -1,6 +1,5 @@
 <template>
     <div>
-        <h1 class="font-14px">{{num}}</h1>
         <!--<list-loader v-bind:list="items"></list-loader>-->
         <section class="list" v-for="item in items" @click="goDetail(item)">
             <img src="../../images/1.jpg" class="img-block" />
@@ -23,6 +22,7 @@
 
 <script>
     import listLoader from './list-loader.vue';
+    import apiTool from '../service/api-tool.js';
     export default {
         name: 'list',
         components: {
@@ -33,7 +33,12 @@
             this.items = [
                 {id:1}, {id:2}, {id:3}
             ];
-            console.log('list');
+
+            apiTool.list({test:1,a:2,c:3}).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
         },
         computed: {
             data: function() {
