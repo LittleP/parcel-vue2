@@ -70,7 +70,3 @@
         }
     }
 </script>
-
-<style lang="less" scoped rel="stylesheet/less">
-
-</style>
