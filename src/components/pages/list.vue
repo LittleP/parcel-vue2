@@ -9,6 +9,7 @@
                     <img class="m-r-5px" src="../../images/2.jpg" />
                     <span class="m-r-10px font-14px gray-9">大佬</span>
                     <i class="point"></i>
+                    <i class="iconfont icon-sousuo font-14px"></i>
                     <span class="m-l-10px font-14px gray-9">超级金牌讲师</span>
                 </p>
                 <p class="m-t-20px line-height-1">

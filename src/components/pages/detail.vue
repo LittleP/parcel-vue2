@@ -2,7 +2,7 @@
     <div>
         <header class="header">
             <img src="../../images/1.jpg" />
-            <span class="font-14px gray-9 m-l-5px p-r-5px">大哥大</span>
+            <span class="font-14px gray-9 m-l-5px p-r-5px">{{title}}</span>
             <span class="font-14px gray-9">2天</span>
         </header>
         <main>
@@ -31,7 +31,8 @@
         },
         data() {
             return {
-                photo: Img
+                photo: Img,
+                title: '黑行'
             }
         },
         mounted() {
